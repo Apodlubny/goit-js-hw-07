@@ -57,5 +57,4 @@ function onModalOpen(event) {
 
 function onModalClose() {
   wideViewMode.close();
-  window.removeEventListener("keydown", onEscapeEvent);
 }

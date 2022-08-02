@@ -6,7 +6,6 @@ console.log(galleryItems);
 const galleryEl = document.querySelector(".gallery");
 const itemsMarkup = addGalleryItems(galleryItems);
 galleryEl.insertAdjacentHTML("beforeend", itemsMarkup);
-galleryEl.addEventListener("click", onGalleryClick);
 
 function addGalleryItems(elements) {
   return elements
@@ -17,14 +16,7 @@ function addGalleryItems(elements) {
     })
     .join("");
 }
-
-function onGalleryClick(event) {
-  event.preventDefault();
-  if (!event.target.classList.contains("gallery__image")) {
-    return;
-  }
-  const lightbox = new SimpleLightbox(".gallery a", {
-    captionsData: "alt",
-    captionDelay: 250,
-  });
-}
+const lightbox = new SimpleLightbox(".gallery a", {
+  captionsData: "alt",
+  captionDelay: 250,
+});
